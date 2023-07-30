@@ -19,7 +19,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 }): JSX.Element => {
     return (
         <MuiListItem style={{
-            marginTop: '2rem',
+            margin: '1rem 0',
             borderBottom: '1px solid #ccc',
         }}>
             {imageUri && <Image alt='イベントの画像' src={imageUri} width={width} height={height} />}
