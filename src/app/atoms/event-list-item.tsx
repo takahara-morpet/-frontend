@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ListItem as MuiListItem } from '@mui/material';
 
-interface ListItemProps {
+interface EventListItemProps {
     title: string;
     imageUri?: string;
     description?: string;
@@ -10,7 +10,7 @@ interface ListItemProps {
     height?: number;
 }
 
-export const ListItem: React.FC<ListItemProps> = ({
+export const EventListItem: React.FC<EventListItemProps> = ({
     title,
     description='No description',
     imageUri='/sample/event.svg',
@@ -33,4 +33,4 @@ export const ListItem: React.FC<ListItemProps> = ({
     );
 }
 
-export default ListItem;
+export default EventListItem;
