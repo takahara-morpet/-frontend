@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 
-export interface LoginButtonProps {
+export interface UseableButtonProps {
     src: string;
     alt: string;
     text: string;
@@ -12,7 +12,7 @@ export interface LoginButtonProps {
     onClick?: () => void;
 }
 
-const LoginButton: React.FC<LoginButtonProps> = ({
+const UseableButton: React.FC<UseableButtonProps> = ({
     src,
     alt,
     text,
@@ -54,4 +54,4 @@ const LoginButton: React.FC<LoginButtonProps> = ({
     );
 };
 
-export default LoginButton;
+export default UseableButton;
