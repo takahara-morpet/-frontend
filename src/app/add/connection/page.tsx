@@ -1,5 +1,5 @@
 import React from "react";
-import AddConnectionLayout from "../../layout/add-connection";
+import AddConnectionLayout from "../../template/add-connection";
 
 const searchResults = [
     {
