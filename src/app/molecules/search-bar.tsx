@@ -12,10 +12,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
     color = "gray",
 }): JSX.Element => {
   return (
-    <div className="relative rounded-md bg-opacity-15 bg-gray-500 hover:bg-opacity-25 ml-0 w-full sm:ml-1 sm:w-auto border ">
+    <div className={`relative rounded-md bg-opacity-15 bg-${color}-500 hover:bg-opacity-25 ml-0 sm:ml-1 sm:w-auto border `}>
       <div className="p-2 h-full w-full absolute pointer-events-none flex items-center ">
         <SearchIcon sx={{
-             color: color,
+             color: "black",
         }}/>
       </div>
       <InputBase
