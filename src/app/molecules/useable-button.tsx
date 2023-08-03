@@ -9,7 +9,9 @@ export interface UseableButtonProps {
     text: string;
     size?: number;
     color?: string;
-    onClick?: () => void;
+    backgroundColor?:string;
+    // onClick?: () => void;
+   
 }
 
 const UseableButton: React.FC<UseableButtonProps> = ({
@@ -17,14 +19,16 @@ const UseableButton: React.FC<UseableButtonProps> = ({
     alt,
     text,
     size = 50,
-    color="inherit",
-    onClick=() => {console.log('clicked')},
+    backgroundColor="inherit",
+    color="black",
+    // onClick=() => {console.log('clicked')},
+    
 }): JSX.Element => {
     
     return (
         <Button
             variant="contained"
-            onClick={onClick}
+            // onClick={onClick}
             sx={{
                 width: "100%",
                 height: "100%",
@@ -32,12 +36,12 @@ const UseableButton: React.FC<UseableButtonProps> = ({
                 textTransform: "none",
                 fontSize: "1.2rem",
                 fontWeight: "bold",
-                color: "black",
-                backgroundColor: color,
+                color: color,
+                backgroundColor: backgroundColor,
                 justifyContent: "flex-start",
                 textAlign: "center",
                 "&:hover": {
-                    backgroundColor: color,
+                    backgroundColor: backgroundColor,
                     opacity: 0.8,
                 },
             }}

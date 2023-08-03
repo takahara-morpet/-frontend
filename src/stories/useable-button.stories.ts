@@ -17,11 +17,21 @@ type Story = StoryObj<typeof UseableButton>;
 
 export const LineColorButton: Story = {
     args: {
-        src: '/vercel.svg',
+        src: '/Line.svg',
         alt: 'placeholder',
         text: 'Useable',
-        color: '#bd1404', // lineカラー
+        color: '#000000', // lineカラー
+        backgroundColor: '#00B900',
         
     }
 };
-
+export const MailButton: Story = {
+    args: {
+        src: '/mail.svg',
+        alt: 'placeholder',
+        text: 'Useable',
+        color: '#ffffff', // black color
+        backgroundColor: '#000000',
+        
+    }
+};
