@@ -26,37 +26,42 @@ const UseableButton: React.FC<UseableButtonProps> = ({
     color = "black",
     // onClick = () => { console.log('clicked') },
     isHoverEnabled = true, // add this line
-    
+
 }): JSX.Element => {
-    
+
     return (
-        <Button
-            variant="contained"
-            // onClick={onClick}
-            sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "40px",
-                textTransform: "none",
-                fontSize: "1.2rem",
-                fontWeight: "bold",
-                color: color,
-                backgroundColor: backgroundColor, // set background color here
-                justifyContent: "flex-start",
-                textAlign: "center",
-                "&:hover": {
-                    backgroundColor: backgroundColor,
-                    opacity: isHoverEnabled ? 0.8 : 1, // control the opacity on hover
-                },
-            }}
-        >
-            <Box sx={{ width: width, height: height, mr: 1 }}>
-            <Image src={src} alt={alt}  width={width} height={height} />
-            </Box>
-            <Box sx={{ flexGrow: 1 }} >
-            {text}
-            </Box>
-        </Button>
+        <Box sx={{
+            backgroundColor: backgroundColor,
+            borderRadius: "40px",
+        }}>
+            <Button
+                variant="contained"
+                // onClick={onClick}
+                sx={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "40px",
+                    textTransform: "none",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    color: color,
+                    backgroundColor: "inherit", // set background color here
+                    justifyContent: "flex-start",
+                    textAlign: "center",
+                    "&:hover": {
+                        backgroundColor: backgroundColor,
+                        opacity: isHoverEnabled ? 0.8 : 1, // control the opacity on hover
+                    },
+                }}
+            >
+                <Box sx={{ width: width, height: height + 3, mr: 1 }}>
+                    <Image src={src} alt={alt} width={width} height={height} />
+                </Box>
+                <Box sx={{ flexGrow: 1 }} >
+                    {text}
+                </Box>
+            </Button>
+        </Box>
     );
 };
 
