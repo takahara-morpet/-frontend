@@ -7,21 +7,25 @@ export interface UseableButtonProps {
     src: string;
     alt: string;
     text: string;
-    size?: number;
+    width?: number;
+    height?: number;
     color?: string;
-    backgroundColor?:string;
+    backgroundColor?: string;
+    // TODO 高原:後で実装しておきます
     // onClick?: () => void;
-   
+    isHoverEnabled?: boolean; // add this line
 }
 
 const UseableButton: React.FC<UseableButtonProps> = ({
     src,
     alt,
     text,
-    size = 50,
-    backgroundColor="inherit",
-    color="black",
-    // onClick=() => {console.log('clicked')},
+    width = 50,
+    height = 50,
+    backgroundColor = "inherit",
+    color = "black",
+    // onClick = () => { console.log('clicked') },
+    isHoverEnabled = true, // add this line
     
 }): JSX.Element => {
     
@@ -37,24 +41,22 @@ const UseableButton: React.FC<UseableButtonProps> = ({
                 fontSize: "1.2rem",
                 fontWeight: "bold",
                 color: color,
-                backgroundColor: backgroundColor,
+                backgroundColor: backgroundColor, // set background color here
                 justifyContent: "flex-start",
                 textAlign: "center",
                 "&:hover": {
                     backgroundColor: backgroundColor,
-                    opacity: 0.8,
+                    opacity: isHoverEnabled ? 0.8 : 1, // control the opacity on hover
                 },
             }}
         >
-            <Box sx={{ width: size, height: size, mr: 1 }}>
-            <Image src={src} alt={alt}  width={size} height={size}/>
+            <Box sx={{ width: width, height: height, mr: 1 }}>
+            <Image src={src} alt={alt}  width={width} height={height} />
             </Box>
             <Box sx={{ flexGrow: 1 }} >
             {text}
             </Box>
         </Button>
-        
-
     );
 };
 
