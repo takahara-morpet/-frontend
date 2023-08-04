@@ -8,7 +8,7 @@ import Header from "../organisms/header";
 const UsersPage: React.FC = (): JSX.Element => {
     return (
         <div>
-            <Header title="ユーザー一覧" />
+            <Header title="友達一覧" smallTitle="Friends" />
             <SearchBar />
             <UsersList />
             <Footer />
