@@ -33,7 +33,7 @@ const Login: React.FC = (): JSX.Element => {
             text="Lineでログイン"
             width={50}
             height={50}
-            color="#000000"
+            textColor="#000000"
             backgroundColor="#00B900"
             isHoverEnabled={true}
           // onClick={()=>{}}
@@ -47,7 +47,7 @@ const Login: React.FC = (): JSX.Element => {
             text="メールでログイン"
             width={50}
             height={50}
-            color="#ffffff"
+            textColor="#ffffff"
             backgroundColor="#000000"
             isHoverEnabled={false}
           // onClick={()=>{}}
