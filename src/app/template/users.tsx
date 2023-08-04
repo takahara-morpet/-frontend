@@ -1,5 +1,5 @@
 import React from "react";
-import ListUserItem from "../atoms/user-item"; 
+import UserListItem from "../atoms/user-item"; 
 import List from "@mui/material/List";
 
 const UsersList: React.FC = () => {
@@ -33,11 +33,9 @@ const UsersList: React.FC = () => {
       <h1>Users List</h1>
       <List>
         {usersData.map((user, index) => (
-          <ListUserItem
+          <UserListItem
             key={index}
-            userName={user.userName}
-            statusMessage={user.statusMessage}
-            imageUri={user.imageUri}
+            user={user}
           />
         ))}
       </List>
