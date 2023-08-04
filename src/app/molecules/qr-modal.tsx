@@ -7,7 +7,6 @@ import exp from "constants";
 
 interface QRModalProps {
   qrSrc: string;
-  handleOpen: () => void;
   handleClose: () => void;
   isOpen: boolean;
 }
