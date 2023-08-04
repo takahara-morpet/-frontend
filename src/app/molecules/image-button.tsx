@@ -1,7 +1,9 @@
 'use client';
 import React from "react";
-import { Button} from "@mui/material";
 import Image from "next/image";
+
+import { Button} from "@mui/material";
+
 
 interface Props {
     src: string;
@@ -25,7 +27,6 @@ export const ImageButton: React.FC<Props> = ({
             <Image
                 src={src}
                 alt={alt}
-                className="dark:invert"
                 width={size}
                 height={size}
                 priority
