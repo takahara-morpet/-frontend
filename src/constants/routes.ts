@@ -4,6 +4,7 @@ enum Routes {
     USERS_URL = `${DEV_SERVER_URL}/users`,
     USERS_DETAIL_URL = `${DEV_SERVER_URL}/user-detail`, // json-serverで分けるためのURL
     EVENTS_URL = `${DEV_SERVER_URL}/events`,
+    EVENTS_DETAIL_URL = `${DEV_SERVER_URL}/event-detail`, // json-serverで分けるためのURL
     Profile_URL = `${DEV_SERVER_URL}/accounts`, // TODO: 仮
 }
 

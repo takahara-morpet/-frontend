@@ -12,3 +12,14 @@ export const fetchEvents = async ():Promise<Event[]>=>{
         throw error;
     };
 }
+
+export const fetchEventDetail = async (id: string): Promise<Event> => {
+    try {
+      console.log(`${Routes.EVENTS_URL}/${id}`);
+      const response = await axios.get(`${Routes.EVENTS_URL}/${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
