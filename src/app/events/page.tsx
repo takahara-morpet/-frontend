@@ -1,14 +1,15 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
-import AddConnectionLayout from "../template/events";
-import EventsList from "../template/events";
+
+
+
 import SearchBar from "../molecules/search-bar";
 import Footer from "../organisms/footer";
 import Header from "../organisms/header";
-import AddIcon from "@mui/icons-material/Add";
-import Fab from "@mui/material/Fab";
-import { fetchEvents } from "../../lib/event";
+import EventsList from "../template/events";
+
+import { fetchEvents } from "../../lib/fetch/event";
 import { Event } from "../../types/response/event";
 
 

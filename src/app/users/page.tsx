@@ -4,7 +4,7 @@ import UsersList from "../template/users";
 import SearchBar from "../molecules/search-bar";
 import Footer from "../organisms/footer";
 import Header from "../organisms/header";
-import { fetchUsers } from "../../lib/user";
+import { fetchUsers } from "../../lib/fetch/user";
 import { User } from "../../types/response/user";
 
 const UsersPage: React.FC = (): JSX.Element => {
