@@ -1,5 +1,5 @@
 import React from "react";
-import SignupForm from "../../pages/signup-form"
+import SignupForm from "../../template/signup-form"
 
 
 
