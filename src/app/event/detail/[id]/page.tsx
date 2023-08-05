@@ -1,5 +1,6 @@
 import React from "react";
 import EventDetailTemplate from "@/app/template/event-detail-template";
+import Header from "../../../organisms/header";
 
 const participants = [
     {
@@ -37,6 +38,8 @@ const participants = [
 const EventDetailPage: React.FC = ():JSX.Element => {
 
     return (
+        <div>
+        <Header title="飲み会７月" />
         <EventDetailTemplate
             id='1'
             title='test event'
@@ -46,6 +49,7 @@ const EventDetailPage: React.FC = ():JSX.Element => {
             rating={3}
             participants={participants}
         />
+        </div>
     );
 }
 
