@@ -5,7 +5,14 @@ export type Event = {
     name: string;
     time: string;
     image?: string;
-    evaluation?: number;
-    memo?: string;
-    participants?: User[];
   };
+
+export type EventDetail = {
+  id: string;
+  name: string;
+  time: string;
+  image?: string;
+  evaluation?: number;
+  memo?: string;
+  participants?: User[];
+};
