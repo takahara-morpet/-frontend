@@ -2,7 +2,7 @@
 import React from "react";
 import UserListItem from "../atoms/user-item"; 
 import List from "@mui/material/List";
-import { User } from "../../types/user";
+import { User } from "../../types/response/user";
 
 type UsersListProps = {
   usersData: User[];
