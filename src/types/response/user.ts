@@ -12,7 +12,7 @@ export type UserProfile = {
     background_url?: string;
     intro_text?: string;
     private_memo?: string;
-    user_line?: string;
+    use_line?: boolean;
     use_discord?: boolean;
     use_twitter?: boolean;
     use_github?: boolean;
