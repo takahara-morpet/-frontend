@@ -7,6 +7,9 @@ import Footer from "../organisms/footer";
 import Header from "../organisms/header";
 import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
+import { fetchEvents } from "../../lib/event";
+import { Event } from "../../types/response/event";
+
 
 const EventsPage: React.FC = (): JSX.Element => {
   return (

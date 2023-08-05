@@ -1,32 +1,17 @@
 import React from "react";
 import ListEventItem from "../atoms/event-list-item"; 
 import List from "@mui/material/List";
+import { Event } from "../../types/response/event";
 
-const EventsList: React.FC = () => {
+
+type EventsListProps = {
+  eventsData: Event[];
+};
+
+
+const EventsList: React.FC<EventsListProps> = ({eventsData}) => {
   // Temporary hard-coded data
-  const eventsData = [
-    {
-      title: "飲み会七月",
-      description: "割と楽しい飲み会だった",
-      imageUri: "/sample/event.svg",
-    },
-    {
-      title: "飲み会七月",
-      sdescription: "割と楽しくない回だった",
-      imageUri: "/sample/event.svg",
-    },
-     {
-      title: "飲み会七月",
-      description: "割と楽しい飲み会だった",
-      imageUri: "/sample/event.svg",
-    },
-    {
-      title: "飲み会七月",
-      sdescription: "割と楽しくない回だった",
-      imageUri: "/sample/event.svg",
-    },
-   
-  ];
+ 
 
   return (
     <div>
@@ -35,9 +20,11 @@ const EventsList: React.FC = () => {
         {eventsData.map((event, index) => (
           <ListEventItem
             key={index}
-            title={event.title}
-            imageUri={event.imageUri}
-            description={event.description}
+            event={ {
+                title:event.name,
+                description:"開催日時:"+ new Date(event.time).toLocaleString()+"　"+"満足度評価:"+event.evaluation|| "No Description",
+                imageUri:event.image || '/sample/event.svg',
+            }}
             width={70}
             height={70}
 
