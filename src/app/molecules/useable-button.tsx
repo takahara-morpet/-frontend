@@ -9,7 +9,7 @@ export interface UseableButtonProps {
     text: string;
     width?: number;
     height?: number;
-    color?: string;
+    textColor?: string;
     backgroundColor?: string;
     // TODO 高原:後で実装しておきます
     // onClick?: () => void;
@@ -23,41 +23,54 @@ const UseableButton: React.FC<UseableButtonProps> = ({
     width = 50,
     height = 50,
     backgroundColor = "inherit",
-    color = "black",
+    textColor = "black",
     // onClick = () => { console.log('clicked') },
     isHoverEnabled = true, // add this line
 
 }): JSX.Element => {
 
-    return (
-        <Box sx={{
+    const styles = {
+        container: {
             backgroundColor: backgroundColor,
             borderRadius: "40px",
-        }}>
+        },
+        button: {
+            width: "100%",
+            height: "100%",
+            borderRadius: "40px",
+            textTransform: "none",
+            fontSize: "1.2rem",
+            fontWeight: "bold",
+            color: textColor,
+            backgroundColor: "inherit", // set background color here
+            justifyContent: "flex-start",
+            textAlign: "center",
+            "&:hover": {
+                backgroundColor: backgroundColor,
+                opacity: isHoverEnabled ? 0.8 : 1, // control the opacity on hover
+            },
+        },
+        imageContainer: {
+            width: width,
+            height: height + 3,
+            mr: 1
+        },
+        textContainer: {
+            flexGrow: 1,
+        },
+    };
+
+    return (
+        <Box sx={styles.container}>
             <Button
                 variant="contained"
                 // onClick={onClick}
-                sx={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "40px",
-                    textTransform: "none",
-                    fontSize: "1.2rem",
-                    fontWeight: "bold",
-                    color: color,
-                    backgroundColor: "inherit", // set background color here
-                    justifyContent: "flex-start",
-                    textAlign: "center",
-                    "&:hover": {
-                        backgroundColor: backgroundColor,
-                        opacity: isHoverEnabled ? 0.8 : 1, // control the opacity on hover
-                    },
-                }}
+                sx={styles.button}
             >
-                <Box sx={{ width: width, height: height + 3, mr: 1 }}>
+                <Box sx={styles.imageContainer}>
                     <Image src={src} alt={alt} width={width} height={height} />
                 </Box>
-                <Box sx={{ flexGrow: 1 }} >
+                <Box sx={styles.textContainer} >
                     {text}
                 </Box>
             </Button>
