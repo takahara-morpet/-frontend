@@ -9,8 +9,8 @@ export type User = {
     background_url?: string;
     intro_text?: string;
     private_memo?: string;
-    use_line?: boolean;
-    use_discord?: boolean;
-    use_twitter?: boolean;
-    use_github?: boolean;
+    line_url?: string;
+    discord_url?: string;
+    twitter_url?: string;
+    github_url?: string;
 };
