@@ -8,9 +8,21 @@ import { fetchUsers } from "../../lib/user";
 import { User } from "../../types/response/user";
 
 const UsersPage: React.FC = (): JSX.Element => {
+<<<<<<< HEAD
+    return (
+        <div>
+            <Header title="友達一覧" smallTitle="Friends" />
+            <SearchBar />
+            <UsersList />
+            <Footer />
+         </div>
+    );
+}
+=======
   const [usersData, setUsersData] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+>>>>>>> develop
 
   useEffect(() => {
     const fetchData = async () => {
