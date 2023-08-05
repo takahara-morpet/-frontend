@@ -2,30 +2,43 @@ import React from 'react';
 import Image from 'next/image';
 import { ListItem as MuiListItem } from '@mui/material';
 
-interface EventListItemProps {
+// NOTE: 仮置き（後で別ファイルに（ex) types/*.ts））
+type Event = {
     title: string;
     imageUri?: string;
     description?: string;
+}
+
+interface EventListItemProps {
+    event: Event; // TODO: イベントオブジェトをしっかり定義
     width?: number;
     height?: number;
 }
 
 export const EventListItem: React.FC<EventListItemProps> = ({
-    title,
-    description='No description',
-    imageUri='/sample/event.svg',
+    event: {
+        title,
+        description='No description',
+        imageUri='/sample/event.svg',
+    },
     height=100,
     width=100 
 }): JSX.Element => {
-    return (
-        <MuiListItem style={{
-            padding: '1rem 0 0 1rem',
+
+    const styles = {
+        listItem: {
+            padding: '1rem 0',
             borderBottom: '1px solid #ccc',
-        }}>
+        },
+        textContainer: {
+            marginLeft: '3rem',
+        }
+    }
+    
+    return (
+        <MuiListItem style={styles.listItem}>
             {imageUri && <Image alt='イベントの画像' src={imageUri} width={width} height={height} />}
-            <div style={{ 
-                marginLeft: '1rem', 
-                }}>
+            <div style={styles.textContainer}>
                 <h3>{title}</h3>
                 {description && <p>{description}</p>}
             </div>
