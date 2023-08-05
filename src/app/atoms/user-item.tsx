@@ -17,9 +17,8 @@ export const ListUserItem: React.FC<ListUserItemProps> = ({
 }): JSX.Element => {
     return (
         <MuiListItem style={{
-            padding: '1rem 0',
+            padding: '1rem',
             borderBottom: '1px solid #ccc',
-            marginLeft: '3rem',
         }}>
             <Avatar
                 src={imageUri}
