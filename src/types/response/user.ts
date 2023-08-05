@@ -6,9 +6,6 @@ export type User = {
     first_kan?: string;
     icon_url?: string;
     status_text?: string;
-  };
-  
-export type UserProfile = {
     background_url?: string;
     intro_text?: string;
     private_memo?: string;
@@ -16,4 +13,4 @@ export type UserProfile = {
     use_discord?: boolean;
     use_twitter?: boolean;
     use_github?: boolean;
-  };
+};
