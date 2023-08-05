@@ -1,4 +1,6 @@
 import React from "react";
+
+import { Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 
@@ -11,20 +13,52 @@ const SearchBar: React.FC<SearchBarProps> = ({
     searchValue,
     color = "gray",
 }): JSX.Element => {
+
+  const styles = {
+    container: {
+      width: "80%",
+      position: "relative",
+      borderRadius: "0.375rem",
+      backgroundColor: color,
+      borderWidth: "1px",
+      "&:hover": {
+        backgroundColor: color,
+        opacity: 0.8,
+      },
+    },
+    iconContainer: {
+        padding: "0.5rem",
+        height: "100%",
+        position: "absolute",
+        pointerEvents: "none",
+    },
+    searchIcon: {
+        color: "black",
+        position: "relative",
+        bottom: "0.4rem",
+        right: "0.1rem",
+    },
+    input: {
+      paddingLeft: "2rem",
+      width: "100%",
+      transitionProperty: "width",
+      color: "black",
+    }
+  }
+
   return (
-    <div className={`relative rounded-md bg-opacity-15 bg-${color}-500 hover:bg-opacity-25 ml-0 sm:ml-1 sm:w-auto border `}>
-      <div className="p-2 h-full w-full absolute pointer-events-none flex items-center ">
-        <SearchIcon sx={{
-             color: "black",
-        }}/>
-      </div>
+    <Box sx={styles.container}>
+      <Box sx={styles.iconContainer}>
+      <SearchIcon sx={styles.searchIcon}/>
+      </Box>
       <InputBase
         fullWidth
         placeholder="Search…"
         inputProps={{ 'aria-label': 'search' }}
-        className="pl-8 w-full  focus:w-20 transition-width text-black"
+        sx={styles.input}
       />
-    </div>
+    </Box>
+    
   );
 };
 

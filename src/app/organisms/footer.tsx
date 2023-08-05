@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -14,13 +14,17 @@ import Routes from '../../constants/routes';
 
 import QRModal from '../molecules/qr-modal';
 
-
-const Footer: React.FC = ({  
-}): JSX.Element => {
+const Footer: React.FC = (): JSX.Element => {
 
     const [isOpen, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const router = useRouter();
+
+    const clickHome = () => router.push(Routes.HOME_URL);
+    const clickUsers = () => router.push(Routes.USERS_URL);
+    const clickProfile = () => router.push(Routes.Profile_URL);
 
     const styles = {
         footer: {
@@ -33,22 +37,15 @@ const Footer: React.FC = ({
 
     return (
         <>
-        <Paper sx={styles.footer} elevation={4}>
-            <BottomNavigation showLabels>
-                <Link href={Routes.HOME_URL}>
-                    <BottomNavigationAction label="ホーム" icon={<HomeIcon />} />
-                </Link>
-                <Link href={Routes.USERS_URL}>
-                <BottomNavigationAction label="ユーザー" icon={<PeopleAltIcon />} />
-                </Link>
-                <BottomNavigationAction label="QR" icon={<QrCode2Icon />} onClick={handleOpen} />
-                <Link href={Routes.Profile_URL}> 
-                    <BottomNavigationAction label="アカウント" icon={<AccountCircleIcon />} />
-                </Link>
-                
-            </BottomNavigation>
-        </Paper>
-        <QRModal qrSrc="/sample/QR.jpg" handleClose={handleClose} isOpen={isOpen} />
+            <Paper sx={styles.footer} elevation={4}>
+                <BottomNavigation >
+                    <BottomNavigationAction icon={<HomeIcon />} onClick={clickHome} />
+                    <BottomNavigationAction icon={<PeopleAltIcon />} onClick={clickUsers} />
+                    <BottomNavigationAction icon={<QrCode2Icon />} onClick={handleOpen} />
+                    <BottomNavigationAction icon={<AccountCircleIcon />} onClick={clickProfile} />
+                </BottomNavigation>
+            </Paper>
+            <QRModal qrSrc="/sample/QR.jpg" handleClose={handleClose} isOpen={isOpen} />
         </>
     )
 }
