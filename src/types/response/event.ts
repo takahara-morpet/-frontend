@@ -13,6 +13,6 @@ export type EventDetail = {
   time: string;
   image?: string;
   evaluation?: number;
-  memo?: string;
+  private_memo?: string;
   participants?: User[];
 };

@@ -13,7 +13,7 @@ export type UserDetail = {
     last?: string;
     last_kana?: string;
     first?: string;
-    first_kan?: string;
+    first_kana?: string;
     icon_url?: string;
     status_text?: string;
     background_url?: string;
