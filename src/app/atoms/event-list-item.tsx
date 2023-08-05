@@ -19,12 +19,12 @@ export const EventListItem: React.FC<EventListItemProps> = ({
 }): JSX.Element => {
     return (
         <MuiListItem style={{
-            padding: '1rem 0',
+            padding: '1rem 0 0 1rem',
             borderBottom: '1px solid #ccc',
         }}>
             {imageUri && <Image alt='イベントの画像' src={imageUri} width={width} height={height} />}
             <div style={{ 
-                marginLeft: '3rem', 
+                marginLeft: '1rem', 
                 }}>
                 <h3>{title}</h3>
                 {description && <p>{description}</p>}
