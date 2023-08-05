@@ -5,6 +5,9 @@ import EventsList from "../template/events";
 import SearchBar from "../molecules/search-bar";
 import Footer from "../organisms/footer";
 import Header from "../organisms/header";
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
+
 
 const EventsPage: React.FC = (): JSX.Element => {
     return (
@@ -19,7 +22,10 @@ const EventsPage: React.FC = (): JSX.Element => {
                 right: '40px', // 右側から20pxの位置
                 bottom: '100px', // 下側から20pxの位置
             }}>
-                <Image alt="イベント作成" src="create_event.svg" width={70} height={70} />
+            <Fab color="primary" aria-label="add">
+                <AddIcon />
+            </Fab>
+        
             </div>
             <Footer />
         </div>
