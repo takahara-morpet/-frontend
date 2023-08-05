@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 import AddConnectionLayout from "../template/events";
 import EventsList from "../template/events";
@@ -12,6 +13,27 @@ import { Event } from "../../types/response/event";
 
 
 const EventsPage: React.FC = (): JSX.Element => {
+  const [eventsData, setEventsData] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+          const users = await fetchEvents();
+          setEventsData(users);
+          setLoading(false);
+        } catch (err) {
+          setError(err as Error);
+          setLoading(false);
+        }
+      };
+      fetchData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
    
       <div>
@@ -19,7 +41,7 @@ const EventsPage: React.FC = (): JSX.Element => {
         <div style={{ marginTop: '20px' }}>
           <SearchBar />
         </div>
-        <EventsList />
+        <EventsList eventsData={eventsData} />
         <div style={{
           position: 'fixed',
           right: '40px',
