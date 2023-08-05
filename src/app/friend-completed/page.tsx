@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Box from "@mui/material/Box";
-import exp from "constants";
-import Header from "../organisms/header"
-import AddFriendCompleted from "../template/add-friend-completed"
+
+import Header from "@/components/organisms/header"
+import AddFriendCompleted from "@/components/templates/add-friend-completed"
 
 
 const FriendCompleted: React.FC = (): JSX.Element => {

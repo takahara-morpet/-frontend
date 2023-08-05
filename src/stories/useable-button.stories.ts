@@ -1,6 +1,6 @@
 'use client';
 import type { Meta, StoryObj } from '@storybook/react';
-import UseableButton from '../app/molecules/useable-button';
+import UseableButton from '@/components/molecules/useable-button';
 
 const meta: Meta = {
     title: 'Useable Button',

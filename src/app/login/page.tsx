@@ -1,6 +1,8 @@
 import React from "react";
+
 import { Grid, Container, Typography } from "@mui/material";
-import UseableButton from "../molecules/useable-button";
+
+import UseableButton from "@/components/molecules/useable-button";
 
 const Login: React.FC = (): JSX.Element => {
   return (

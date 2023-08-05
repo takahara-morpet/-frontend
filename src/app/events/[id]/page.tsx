@@ -1,6 +1,7 @@
 import React from "react";
-import EventDetailTemplate from "@/app/template/event-detail-template";
-import Header from "../../../organisms/header";
+
+import EventDetailTemplate from "@/components/templates/event-detail";
+import Header from "@/components/organisms/header";
 
 const participants = [
     {

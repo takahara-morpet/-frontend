@@ -2,15 +2,13 @@
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 
-
-
-import SearchBar from "../molecules/search-bar";
-import Footer from "../organisms/footer";
-import Header from "../organisms/header";
-import EventsList from "../template/events";
-
-import { fetchEvents } from "../../lib/fetch/event";
-import { Event } from "../../types/response/event";
+import SearchBar from "@/components/molecules/search-bar"
+import Footer from "@/components/organisms/footer";
+import Header from "@/components/organisms/header";
+import EventsList from "@/components/templates/events";
+import Load from "@/components/templates/load";
+import { fetchEvents } from "@/lib/fetch/event";
+import { Event } from "@/types/response/event";
 
 
 const EventsPage: React.FC = (): JSX.Element => {
@@ -32,7 +30,7 @@ const EventsPage: React.FC = (): JSX.Element => {
       fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Load />;
   if (error) return <div>Error: {error.message}</div>;
 
   return (

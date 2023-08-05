@@ -1,11 +1,14 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import UsersList from "../template/users";
-import SearchBar from "../molecules/search-bar";
-import Footer from "../organisms/footer";
-import Header from "../organisms/header";
-import { fetchUsers } from "../../lib/fetch/user";
-import { User } from "../../types/response/user";
+
+
+import SearchBar from "@/components/molecules/search-bar";
+import Footer from "@/components/organisms/footer";
+import Header from "@/components/organisms/header";
+import UsersList from "@/components/templates/users";
+import Load from "@/components/templates/load";
+import { fetchUsers } from "@/lib/fetch/user";
+import { User } from "@/types/response/user";
 
 const UsersPage: React.FC = (): JSX.Element => {
   
@@ -27,7 +30,7 @@ const UsersPage: React.FC = (): JSX.Element => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Load />;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
