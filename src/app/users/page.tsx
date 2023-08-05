@@ -8,6 +8,7 @@ import { fetchUsers } from "../../lib/user";
 import { User } from "../../types/response/user";
 
 const UsersPage: React.FC = (): JSX.Element => {
+  
   const [usersData, setUsersData] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -31,7 +32,7 @@ const UsersPage: React.FC = (): JSX.Element => {
 
   return (
     <div>
-        <Header title="ユーザー一覧" />
+        <Header title="友達一覧" smallTitle="Friends" />
         <SearchBar />
         <UsersList usersData={usersData}/>
         <Footer />
