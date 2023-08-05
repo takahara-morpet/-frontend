@@ -26,10 +26,18 @@ const Footer: React.FC = (): JSX.Element => {
     const clickUsers = () => router.push(Routes.USERS_URL);
     const clickProfile = () => router.push(Routes.Profile_URL);
 
+    const styles = {
+        footer: {
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            right: 0,
+        },
+    }
 
     return (
         <>
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={4}>
+            <Paper sx={styles.footer} elevation={4}>
                 <BottomNavigation >
                     <BottomNavigationAction icon={<HomeIcon />} onClick={clickHome} />
                     <BottomNavigationAction icon={<PeopleAltIcon />} onClick={clickUsers} />

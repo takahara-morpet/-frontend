@@ -1,39 +1,78 @@
 import * as React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
+import { Subtitles } from '@mui/icons-material';
 
 
 interface HeaderProps {
-  title?: string;
+  title: string;
+  smallTitle?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({
-  title = "Title",
+  title,
+  smallTitle,
 }): JSX.Element => {
+
+  const styles = {
+    container: {
+      flexGrow: 1,
+    },
+    appBar: {
+      backgroundColor: "#62A2DE",
+    },
+    toolbar: {
+      paddingTop: '10px',
+    },
+    imageContainer: {
+      mr: 1,
+    },
+    textContainer: {
+      display: "flex",
+            flexDirection: "column",
+            flexGrow: 1,
+            textAlign: "center",
+            position: "relative",
+            right: "20px",
+    },
+    text: {
+      flexGrow: 1,
+      textAlign: "center",
+    },
+    avatar: {
+      width: 50,
+      height: 50,
+}
+}
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#62A2DE" }}>
-        <Toolbar>
-          <a href="/">
-            <img
-              src="/penguin.svg" // 画像のパスを指定してください
-              alt="Menu"
-              style={{width: 80, height: 80, marginRight: 8 }} // スタイルを調整する場合はここで行ってください
-            />
-          </a>
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1, textAlign: "center" }}>
-            {title}
-          </Typography>
-         
+    <Box sx={styles.container}>
+      <AppBar position="static" sx={styles.appBar}>
+        <Toolbar sx={styles.toolbar}>
+          <Link href="/">
+            <Box sx={styles.imageContainer}>
+              <Image src="/penguin.svg" alt="Menu" width={80} height={80} />
+            </Box>
+          </Link>
+          <Box sx={styles.textContainer}>
+            <Typography noWrap variant="h4" component="div" sx={styles.text}>
+              {title}
+            </Typography>
+            <Typography noWrap variant="h6" component="div" sx={styles.text}>
+              {smallTitle ? smallTitle : ""}
+            </Typography>
+          </Box>
             <Avatar
-              src="/sample/user.png" // 画像のパスを指定してください
+              src="/sample/user.png" 
               alt="Login"
-              style={{width:50,height: 50 }} // スタイルを調整する場合はここで行ってください
+              style={styles.avatar} 
             />
-        
         </Toolbar>
       </AppBar>
     </Box>
