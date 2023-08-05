@@ -1,6 +1,6 @@
 import React from "react";
-import AddConnectionLayout from "../pages/users";
-import UsersList from "../pages/users";
+import AddConnectionLayout from "../template/users";
+import UsersList from "../template/users";
 import SearchBar from "../molecules/search-bar";
 
 const UsersPage: React.FC = (): JSX.Element => {
