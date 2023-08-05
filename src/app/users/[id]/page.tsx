@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 
 
-import UserDetailTemplate from "@/app/template/user-detail";
-import Load from "@/app/template/load";
+import UserDetailTemplate from "@/components/templates/user-detail";
+import Load from "@/components/templates/load";
 import { UserDetail as UserDetailType } from "@/types/response/user";
 import { Event as  EventType } from "@/types/response/event";
 
@@ -29,7 +29,7 @@ const UserDetail: React.FC<UserDetailProps> = (): JSX.Element => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const users = await fetchUserDetail(id);
+            const users = await fetchUserDetail(String(id));
             console.log(users);
             const events = await fetchEvents();
             console.log(events);
@@ -44,7 +44,7 @@ const UserDetail: React.FC<UserDetailProps> = (): JSX.Element => {
         fetchData();
       }, []);
 
-      if (loading) return <div>Loading...</div>;
+      if (loading) return <Load />;
       if (error) return <div>Error: {error.message}</div>;
       
     return (

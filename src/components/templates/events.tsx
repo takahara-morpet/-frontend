@@ -1,5 +1,5 @@
 import React from "react";
-import ListEventItem from "../atoms/event-list-item"; 
+import ListEventItem from "../../components/atoms/event-list-item"; 
 import List from "@mui/material/List";
 import { Event } from "../../types/response/event";
 
@@ -10,9 +10,6 @@ type EventsListProps = {
 
 
 const EventsList: React.FC<EventsListProps> = ({eventsData}) => {
-  // Temporary hard-coded data
- 
-
   return (
     <div>
      

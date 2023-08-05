@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
+
 import { Box } from '@mui/material';
 import { Avatar } from '@mui/material';
 import { Rating } from '@mui/material';

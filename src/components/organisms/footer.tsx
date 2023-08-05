@@ -12,7 +12,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import Routes from '../../constants/routes';
 
-import QRModal from '../molecules/qr-modal';
+import QRModal from '../../components/molecules/qr-modal';
 
 const Footer: React.FC = (): JSX.Element => {
 

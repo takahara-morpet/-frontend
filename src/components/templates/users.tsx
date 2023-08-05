@@ -1,6 +1,6 @@
 // UsersList.tsx
 import React from "react";
-import UserListItem from "../atoms/user-item"; 
+import UserListItem from "../../components/atoms/user-item"; 
 import List from "@mui/material/List";
 import { User } from "../../types/response/user";
 
