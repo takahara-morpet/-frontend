@@ -1,61 +1,67 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Avatar } from '@mui/material';
 import { Rating } from '@mui/material';
 import { List } from '@mui/material';
 
-type Participant = {
-    id: string;
-    name: string;
-    imageUri: string;
-}
+import { EventDetail } from '@/types/response/event';
 
+
+const maxParticipants = 5; // TODO: 最大表示人数(←モバイルと仮定。モバイルとPCで変えるべきっぽい)
 interface EventDetailTemplateProps {
-    // HACK: Event Objectを定義する
-    id: string;
-    title: string;
-    src: string;
-    heldDate: string;
-    note: string;
-    rating: number;
-    // HACK: User Objectを定義する
-    participants: Participant[];
+    event: EventDetail;
 }
     
 
 const EventDetailTemplate: React.FC<EventDetailTemplateProps> = ({
-    id,
-    // title,
-    src,
-    heldDate,
-    note,
-    rating,
-    participants,
+    event,
 }):JSX.Element => {
 
-    const maxParticipants = 5; // TODO: 最大表示人数(←モバイルと仮定。モバイルとPCで変えるべきっぽい)
-
-    
-
-    return (
-        <Box sx={{
+    const styles = {
+        container: {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             padding: '10px 20px',
-        }}>
+        },
+        time: {
+            textArign: 'right',
+            padding: "0.25rem",
+        },
+        memo: {
+            textArign: 'center',
+            margin: "0.25rem",
+        },
+        rating: {
+            fontSize: '3rem',
+        },
+        participantsContainer: {
+            width: 50,
+            height: 50,
+            display: 'inline-block',
+            margin: '0 10px'
+        },
+        name: {
+            display: 'inline-block',
+        }
+    }
+
+    return (
+        <Box sx={styles.container}>
             <Box sx={{
                 alignItems: 'center',
             }}>
-                <Image src={src} alt='Event Image' width={500} height={500} />
-                <p className='text-right p-1'>開催日時: {heldDate}</p>
-                <h4 className='text-center m-1'>NOTE: {note}</h4>
+                <Image src={event.image} alt='Event Image' width={500} height={500} />
+                <Typography variant='h6' sx={styles.time}>
+                    開催日時: {event.time}
+                </Typography>
+                <Typography variant='h5' sx={styles.memo}>
+                    NOTE: {event.private_memo}
+                </Typography>
             </Box>
-            <Rating name="read-only" value={rating} readOnly sx={{
-                fontSize: '3rem',
-            }} />
+            <Rating name="read-only" value={event.evaluation} readOnly sx={styles.rating} />
             {/* User Avatar list */}
             <Box sx={{
                 alignItems: 'center',
@@ -66,17 +72,15 @@ const EventDetailTemplate: React.FC<EventDetailTemplateProps> = ({
                     margin: '10px auto',
                 }}>
                     {/*  */}
-                    {participants.slice(0, maxParticipants).map((participant) => (
-                        <Box sx={{ width: 50, height: 50, display: 'inline-block', margin: '0 10px' }}>
+                    {event.participants.slice(0, maxParticipants).map(( participant, index) => (
+                        <Box sx={styles.participantsContainer}>
                             <Avatar
-                            key={participant.id}
-                            src={participant.imageUri}
+                            key={index}
+                            src={participant.icon_url}
                             alt='ユーザー画像'
                         />
-                        <p style={{ display: 'inline-block' }}>{participant.name}</p>
+                        <Typography sx={styles.name} variant='h6'>{participant.username}</Typography>
                         </Box>
-                        
-                        
                     ))}
                 </List>
             </Box>

@@ -2,54 +2,40 @@ import React from "react";
 
 import EventDetailTemplate from "@/components/templates/event-detail";
 import Header from "@/components/organisms/header";
+import Load from "@/components/templates/load";
+import { EventDetail } from "@/types/response/event";
+import { fetchEventDetail } from "@/lib/fetch/event";
 
-const participants = [
-    {
-        id: '1',
-        name: 'tarou',
-        imageUri: 'https://mui.com/static/images/avatar/1.jpg',
-    },
-    {
-        id: '2',
-        name: 'jiro',
-        imageUri: 'https://mui.com/static/images/avatar/2.jpg',
-    },
-    {
-        id: '3',
-        name: 'saburo',
-        imageUri: 'https://mui.com/static/images/avatar/2.jpg',
-    },
-    {
-        id: '4',
-        name: 'shiro',
-        imageUri: 'https://mui.com/static/images/avatar/2.jpg',
-    },
-    {
-        id: '5',
-        name: 'goro',
-        imageUri: 'https://mui.com/static/images/avatar/2.jpg',
-    },
-    {
-        id: '6',
-        name: 'rokuro',
-        imageUri: 'https://mui.com/static/images/avatar/2.jpg',
-    },
-]
 
 const EventDetailPage: React.FC = ():JSX.Element => {
+
+    const [event, setEvent] = React.useState<EventDetail | null>(null);
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState<Error | null>(null);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const event = await fetchEventDetail('1');
+                setEvent(event);
+                setLoading(false);
+            } catch (err) {
+                setError(err as Error);
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
+    if (loading) return <Load />;
+    if (error) return <div>Error: {error.message}</div>;
+
+
 
     return (
         <div>
         <Header title="飲み会７月" />
-        <EventDetailTemplate
-            id='1'
-            title='test event'
-            src='/sample/event.svg'
-            heldDate='2021-10-01'
-            note='test note'
-            rating={3}
-            participants={participants}
-        />
+        <EventDetailTemplate event={event} />
         </div>
     );
 }
