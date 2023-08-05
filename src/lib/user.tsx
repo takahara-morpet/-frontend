@@ -7,7 +7,7 @@ import { User } from "../types/response/user";
 
 export const fetchUsers = async (): Promise<User[]> => {
   try {
-    const response = await axios.get(Routes.HOME_PATH);
+    const response = await axios.get(Routes.HOME_USERS_PATH);
     return response.data;
   } catch (error) {
     throw error;
