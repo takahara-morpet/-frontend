@@ -1,0 +1,39 @@
+{"users":[
+    {
+        "username": "johndoe",
+        "last": "Doe",
+        "last_kana": "ドウ",
+        "first": "John",
+        "first_kana": "ジョン",
+        "icon_url": "penguin.svg",
+        "status_text": "Hello, world!"
+    },
+    {
+        "username": "janedoe",
+        "last": "Doe",
+        "last_kana": "ドウ",
+        "first": "Jane",
+        "first_kana": "ジェーン",
+        "icon_url":  "penguin.svg",
+        "status_text": "Good day, world!"
+    },
+    {
+        "username": "bobsmith",
+        "last": "Smith",
+        "last_kana": "スミス",
+        "first": "Bob",
+        "first_kana": "ボブ",
+        "icon_url":  "penguin.svg",
+        "status_text": "Hi, there!"
+    },
+    {
+        "username": "alicesmith",
+        "last": "Smith",
+        "last_kana": "スミス",
+        "first": "Alice",
+        "first_kana": "アリス",
+        "icon_url":  "penguin.svg",
+        "status_text": "Hello, folks!"
+    }
+]
+}
