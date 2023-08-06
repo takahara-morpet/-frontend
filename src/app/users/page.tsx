@@ -9,12 +9,15 @@ import UsersList from "@/components/template/users";
 import Load from "@/components/template/load";
 import { fetchUsers } from "@/lib/fetch/user";
 import { User } from "@/types/response/user";
+import { useRouter } from 'next/navigation';
 
 const UsersPage: React.FC = (): JSX.Element => {
   
   const [usersData, setUsersData] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+
+ 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +40,7 @@ const UsersPage: React.FC = (): JSX.Element => {
     <div>
         <Header title="友達一覧" smallTitle="Friends" />
         <SearchBar />
-        <UsersList usersData={usersData}/>
+        <UsersList usersData={usersData} />
         <Footer />
      </div>
   );
