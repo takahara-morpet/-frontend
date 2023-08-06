@@ -14,8 +14,8 @@ type UsersListProps = {
 const UsersList: React.FC<UsersListProps> = ({ usersData  }) => {
    const router = useRouter();
   
-  const handleUserClick = (id: string) => {
-    router.push(`/user/${id}`);
+  const handleUserClick = (username: string) => {
+    router.push(`/users/${username}`);
   };
   
 

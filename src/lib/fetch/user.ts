@@ -16,11 +16,11 @@ export const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
-export const fetchUserDetail = async (id: string): Promise<UserDetail> => {
+export const fetchUserDetail = async (username: string): Promise<UserDetail> => {
   try {
-    console.log(`${Routes.USERS_DETAIL_URL}/${id}`);
-    const response = await axios.get(`${Routes.USERS_DETAIL_URL}/${id}`);
-    console.log(response.data);
+    
+    const response = await axios.get(`${Routes.PRO_USER_DETAIL_URL}/${username}`);
+   
     return response.data;
   } catch (error) {
     throw error;
