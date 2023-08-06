@@ -1,7 +1,8 @@
 import React from "react";
-import ListEventItem from "../../components/atoms/event-list-item"; 
+import ListEventItem from "../atoms/event-list-item"; 
 import List from "@mui/material/List";
 import { Event } from "../../types/response/event";
+import { useRouter } from 'next/navigation';
 
 
 type EventsListProps = {
@@ -10,6 +11,12 @@ type EventsListProps = {
 
 
 const EventsList: React.FC<EventsListProps> = ({eventsData}) => {
+
+  const router = useRouter();
+  const handleNavigation = (id) => {
+    router.push(`/events/${id}`);
+  };
+
   return (
     <div>
      
@@ -24,6 +31,7 @@ const EventsList: React.FC<EventsListProps> = ({eventsData}) => {
             }}
             width={70}
             height={70}
+            onClick={() => handleNavigation(event.id)}
 
           />
         ))}

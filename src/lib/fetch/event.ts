@@ -15,7 +15,6 @@ export const fetchEvents = async ():Promise<Event[]>=>{
 
 export const fetchEventDetail = async (id: string): Promise<Event> => {
     try {
-      console.log(`${EVENTS_URL}/${id}`);
       const response = await axios.get(`${EVENTS_URL}/${id}`);
       return response.data;
     } catch (error) {

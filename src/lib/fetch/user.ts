@@ -18,7 +18,7 @@ export const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
-export const fetchUserDetail = async (id: string): Promise<UserDetail> => {
+export const fetchUserDetail = async (username: string): Promise<UserDetail> => {
   try {
     console.log(`${USERS_DETAIL_URL}/${id}`);
     const response = await axios.get(`${USERS_DETAIL_URL}/${id}`);

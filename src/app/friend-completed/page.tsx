@@ -3,10 +3,10 @@ import React from "react";
 import Image from "next/image";
 
 import Header from "@/components/organisms/header"
-import AddFriendCompleted from "@/components/templates/add-friend-completed"
+import AddFriendCompleted from "@/components/template/add-friend-completed"
 import { User } from "@/types/response/user";
 import { fetchUsers } from "@/lib/fetch/user";
-import Load from "@/components/templates/load";
+import Load from "@/components/template/load";
 
 const FriendCompleted: React.FC = (): JSX.Element => {
 

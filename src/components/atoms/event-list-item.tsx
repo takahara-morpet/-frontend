@@ -13,6 +13,7 @@ interface EventListItemProps {
     event: Event; // TODO: イベントオブジェトをしっかり定義
     width?: number;
     height?: number;
+     onClick: () => void;
 }
 
 export const EventListItem: React.FC<EventListItemProps> = ({
@@ -22,7 +23,8 @@ export const EventListItem: React.FC<EventListItemProps> = ({
         imageUri='/sample/event.svg',
     },
     height=100,
-    width=100 
+    width=100 ,
+    onClick,
 }): JSX.Element => {
 
     const styles = {
@@ -36,7 +38,7 @@ export const EventListItem: React.FC<EventListItemProps> = ({
     }
     
     return (
-        <MuiListItem style={styles.listItem}>
+        <MuiListItem style={styles.listItem} onClick={onClick}>
             {imageUri && <Image alt='イベントの画像' src={imageUri} width={width} height={height} />}
             <div style={styles.textContainer}>
                 <h3>{title}</h3>

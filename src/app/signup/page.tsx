@@ -1,5 +1,5 @@
 import React from "react";
-import SignupForm from "@/components/templates/signup"
+import SignupForm from "@/components/template/signup"
 
 
 
