@@ -7,9 +7,11 @@ import Footer from "@/components/organisms/footer";
 import Load from "@/components/templates/load";
 import { EventDetail } from "@/types/response/event";
 import { fetchEventDetail } from "@/lib/fetch/event";
+import { useParams } from "next/navigation";
 
 
 const EventDetailPage: React.FC = ():JSX.Element => {
+     const { id } = useParams();
 
     const [event, setEvent] = React.useState<EventDetail | null>(null);
     const [loading, setLoading] = React.useState(true);
@@ -18,7 +20,7 @@ const EventDetailPage: React.FC = ():JSX.Element => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const event = await fetchEventDetail('1');
+                const event = await fetchEventDetail(String(id));
                 setEvent(event);
                 setLoading(false);
             } catch (err) {
@@ -36,7 +38,7 @@ const EventDetailPage: React.FC = ():JSX.Element => {
 
     return (
         <div>
-        <Header title="飲み会７月" />
+        <Header title={event.name}/>
         <EventDetailTemplate event={event} />
         <Footer />
         </div>

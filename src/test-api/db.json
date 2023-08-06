@@ -2,16 +2,16 @@
     "events": [
       {
         "id": "1",
-        "name": "John",
+        "name": "飲み会7月",
         "time": "2023-08-05T10:00:00Z",
-        "image": "penguin.svg",
+        "image": "/sample/event.svg",
         "evaluation": 4.5
       },
       {
         "id": "2",
         "name": "Alice",
         "time": "2023-08-05T14:30:00Z",
-        "image": "penguin.svg",
+        "image": "/sample/event.svg",
          "evaluation": 4.7
       },
       {
@@ -60,11 +60,11 @@
     "event-detail": [
         {
             "id": 1,
-            "name": "test event",
+            "name": "飲み会8月",
             "time": "2023-08-05T10:00:00Z",
-            "image": "https://example.com/image.png",
+            "image":  "/sample/event.svg",
             "evaluation": 4.5,
-            "private_memo": "This is a great event!",
+            "private_memo": "とっても楽しかったです。また行きたいな",
             "participaints": [
                 {
                     "username": "johndoe",
@@ -108,7 +108,7 @@
             "id": 2,
             "name": "test event2",
             "time": "2023-08-05T10:00:00Z",
-            "image": "https://example.com/image.png",
+            "image": "/sample/event.svg",
             "evaluation": 4.5,
             "private_memo": "This is a great event!",
             "participaints": [
@@ -154,7 +154,7 @@
             "id": 3,
             "name": "test event3",
             "time": "2023-08-05T10:00:00Z",
-            "image": "https://example.com/image.png",
+            "image": "https://via.placeholder.com/1000",
             "evaluation": 4.5,
             "private_memo": "This is a great event!",
             "participaints": [
