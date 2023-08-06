@@ -1,5 +1,5 @@
 import React from "react";
-import CreateNewEvent from "../../template/create-new-event";
+import CreateNewEvent from "../../../components/templates/create-new-event";
 import Header from "../../../components/organisms/header";
 
 

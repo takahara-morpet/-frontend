@@ -102,13 +102,12 @@ const CreateNewEvent: React.FC<Props> = ({ allParticipants }) => {
            </Box>
 
 
-            <Box sx={{ marginBottom: 4 }}>
-            <div>
+            <Box sx={{ marginBottom: 4 ,backgroundColor: '#62A2DE'}}>
                 <Button
                     variant="contained"
                     onClick={handleClickOpen}
                     sx={{
-                        backgroundColor: '859FB7', // This will set the color explicitly
+                        backgroundColor: 'inherit', // This will set the color explicitly
                         color: 'white', // This will set the text color to white
                         boxShadow: 3,
                         textTransform: 'none',
@@ -121,7 +120,6 @@ const CreateNewEvent: React.FC<Props> = ({ allParticipants }) => {
                     >
                     参加者を選択
                 </Button>
-                   </div>
 
                 <Dialog
                     open={openDialog}
