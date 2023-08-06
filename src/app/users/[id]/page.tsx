@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import Header from "../../../components/organisms/header"
 import { useState } from "react";
 import { useParams } from "next/navigation";
-import UserDetailTemplate from "@/components/templates/user-detail";
-import Load from "@/components/templates/load";
+import UserDetailTemplate from "@/components/template/user-detail";
+import Load from "@/components/template/load";
 import { UserDetail as UserDetailType } from "@/types/response/user";
 import { Event as  EventType } from "@/types/response/event";
 import { fetchUserDetail } from "@/lib/fetch/user";

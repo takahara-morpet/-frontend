@@ -1,10 +1,10 @@
 'use client'
 import React from "react";
 
-import EventDetailTemplate from "@/components/templates/event-detail";
+import EventDetailTemplate from "@/components/template/event-detail";
 import Header from "@/components/organisms/header";
 import Footer from "@/components/organisms/footer";
-import Load from "@/components/templates/load";
+import Load from "@/components/template/load";
 import { EventDetail } from "@/types/response/event";
 import { fetchEventDetail } from "@/lib/fetch/event";
 import { useParams } from "next/navigation";

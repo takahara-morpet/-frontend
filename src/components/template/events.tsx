@@ -1,5 +1,5 @@
 import React from "react";
-import ListEventItem from "../../components/atoms/event-list-item"; 
+import ListEventItem from "../atoms/event-list-item"; 
 import List from "@mui/material/List";
 import { Event } from "../../types/response/event";
 import { useRouter } from 'next/router';
