@@ -15,7 +15,7 @@ import Routes from '../../constants/routes';
 import QRModal from '../molecules/qr-modal';
 
 
-const Footer: React.FC = ({  
+const Footer: React.FC = ({
 }): JSX.Element => {
 
     const [isOpen, setOpen] = React.useState(false);
@@ -33,10 +33,10 @@ const Footer: React.FC = ({
                 <BottomNavigationAction label="ユーザー" icon={<PeopleAltIcon />} />
                 </Link>
                 <BottomNavigationAction label="QR" icon={<QrCode2Icon />} onClick={handleOpen} />
-                <Link href={Routes.Profile_URL}> 
+                <Link href={Routes.Profile_URL}>
                     <BottomNavigationAction label="アカウント" icon={<AccountCircleIcon />} />
                 </Link>
-                
+
             </BottomNavigation>
         </Paper>
         <QRModal qrSrc="/sample/QR.jpg" handleClose={handleClose} isOpen={isOpen} />

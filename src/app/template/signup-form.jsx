@@ -15,10 +15,10 @@ const SignupForm=()=>{
                 新規登録
             </Typography>
             <Box component="form" noValidate sx={{mt:1}}>
-                <TextField  
-                    margin='normal' 
-                    required 
-                    fullWidth 
+                <TextField
+                    margin='normal'
+                    required
+                    fullWidth
                     id='email'
                     label='メールアドレス'
                     name='email'
@@ -32,7 +32,7 @@ const SignupForm=()=>{
                             },
                         },
                     }} />
-                <TextField 
+                <TextField
                     margin='normal'
                     required
                     fullWidth
@@ -48,22 +48,22 @@ const SignupForm=()=>{
                                 borderColor: '#6CC2F2', // アウトラインの枠線の色を指定
                             },
                         },
-                    }} 
+                    }}
                     />
 
-               
+
             </Box>
-                <Button          
+                <Button
                     fullWidth
                     variant='contained'
                     sx={{
                         mt: 3,
                         mb: 2,
                         backgroundColor: '#ffffff',  // ボタンの背景色を指定
-                        color: '#6CC2F2',  
+                        color: '#6CC2F2',
                         '&:hover': {
                             backgroundColor: '#6CC2F2', // ホバー状態の背景色も同じにする
-                            color: '#ffffff', 
+                            color: '#ffffff',
                             // あるいはダークモードなど、ホバー時に少し色を変えたい場合は
                             // backgroundColor: 'rgba(108, 194, 242, 0.75)',
                         },
