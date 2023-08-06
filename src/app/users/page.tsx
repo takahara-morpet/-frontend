@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import SearchBar from "@/components/molecules/search-bar";
 import Footer from "@/components/organisms/footer";
 import Header from "@/components/organisms/header";
-import UsersList from "@/components/templates/users";
-import Load from "@/components/templates/load";
+import UsersList from "@/components/template/users";
+import Load from "@/components/template/load";
 import { fetchUsers } from "@/lib/fetch/user";
 import { User } from "@/types/response/user";
 
