@@ -11,14 +11,18 @@ import { fetchUsers } from "@/lib/fetch/user";
 import { User } from "@/types/response/user";
 
 const UsersPage: React.FC = (): JSX.Element => {
+
+  console.log("users/page.tsx");
   
   const [usersData, setUsersData] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    console.log("useEffect");
     const fetchData = async () => {
       try {
+        console.log("users");
         const users = await fetchUsers();
         setUsersData(users);
         setLoading(false);

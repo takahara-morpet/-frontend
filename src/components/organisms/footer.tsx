@@ -24,7 +24,7 @@ const Footer: React.FC = (): JSX.Element => {
 
     const clickHome = () => router.push(PageRoutes.EVENTS_URL);
     const clickUsers = () => router.push(PageRoutes.USERS_URL);
-    const clickProfile = () => router.push(PageRoutes.ACCOUNTS_URL);
+    const clickProfile = () => router.push(PageRoutes.PROFILE_URL);
 
     const styles = {
         footer: {
