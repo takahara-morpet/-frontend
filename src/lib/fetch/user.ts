@@ -26,3 +26,13 @@ export const fetchUserDetail = async (id: string): Promise<UserDetail> => {
     throw error;
   }
 };
+
+export const fetchMyAccount = async (): Promise<UserDetail> => {
+  try {
+    const response = await axios.get(Routes.PRO_PROFILE_URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+

@@ -23,8 +23,8 @@ const Footer: React.FC = (): JSX.Element => {
     const router = useRouter();
 
     const clickHome = () => router.push(Routes.HOME_URL);
-    const clickUsers = () => router.push(Routes.USERS_URL);
-    const clickProfile = () => router.push(Routes.Profile_URL);
+    const clickUsers = () => router.push(Routes.PRO_USERS_URL);
+    const clickProfile = () => router.push(Routes.PRO_PROFILE_URL);
 
     const styles = {
         footer: {
