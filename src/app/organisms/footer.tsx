@@ -12,7 +12,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import Routes from '../../constants/routes';
 
-import QRModal from '../molecules/qr-modal';
+import QRModal from '../../components/molecules/qr-modal';
 
 
 const Footer: React.FC = ({
@@ -29,7 +29,7 @@ const Footer: React.FC = ({
                 <Link href={Routes.HOME_URL}>
                     <BottomNavigationAction label="ホーム" icon={<HomeIcon />} />
                 </Link>
-                <Link href={Routes.USERS_URL}>
+                <Link href={Routes.PRO_USERS_URL}>
                 <BottomNavigationAction label="ユーザー" icon={<PeopleAltIcon />} />
                 </Link>
                 <BottomNavigationAction label="QR" icon={<QrCode2Icon />} onClick={handleOpen} />

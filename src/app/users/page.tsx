@@ -1,19 +1,46 @@
-import React from "react";
-import AddConnectionLayout from "../template/users";
-import UsersList from "../template/users";
-import SearchBar from "../molecules/search-bar";
-import Footer from "../organisms/footer";
-import Header from "../organisms/header";
+"use client"
+import React, { useEffect, useState } from "react";
+
+
+import SearchBar from "@/components/molecules/search-bar";
+import Footer from "@/components/organisms/footer";
+import Header from "@/components/organisms/header";
+import UsersList from "@/components/templates/users";
+import Load from "@/components/templates/load";
+import { fetchUsers } from "@/lib/fetch/user";
+import { User } from "@/types/response/user";
 
 const UsersPage: React.FC = (): JSX.Element => {
-    return (
-        <div>
-            <Header title="ユーザー一覧" />
-            <SearchBar />
-            <UsersList />
-            <Footer />
-         </div>
-    );
-}
+  
+  const [usersData, setUsersData] = useState<User[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const users = await fetchUsers();
+        setUsersData(users);
+        setLoading(false);
+      } catch (err) {
+        setError(err as Error);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (loading) return <Load />;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <div>
+        <Header title="友達一覧" smallTitle="Friends" />
+        <SearchBar />
+        <UsersList usersData={usersData}/>
+        <Footer />
+     </div>
+  );
+};
 
 export default UsersPage;

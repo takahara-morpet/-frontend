@@ -1,16 +1,42 @@
+'use client'
 import React from "react";
 import Image from "next/image";
-import Box from "@mui/material/Box";
-import exp from "constants";
-import Header from "../organisms/header"
-import AddFriendCompleted from "../template/add-friend-completed"
 
+import Header from "@/components/organisms/header"
+import AddFriendCompleted from "@/components/templates/add-friend-completed"
+import { User } from "@/types/response/user";
+import { fetchUsers } from "@/lib/fetch/user";
+import Load from "@/components/templates/load";
 
 const FriendCompleted: React.FC = (): JSX.Element => {
+
+    const [ userData , setUserData ] = React.useState<User | null>(null);
+    const [ loading , setLoading ] = React.useState<boolean>(true);
+    const [ error , setError ] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+        try {
+            // TODO: エンドポイントを確認後に修正
+            const users = await fetchUsers();
+            setUserData(users[0]);
+            setLoading(false);
+        } catch (err) {
+            setError(true);
+            setLoading(false);
+        }
+        };
+        fetchData();
+    }, []);
+
+    if (loading) return <Load />;
+    if (error) return <div>Error: {error}</div>;
+
     return (
     <div>
         <Header title="友達追加完了"/>
-        <AddFriendCompleted name="masaki" createdAt="2023-10-10" avatarUrl="penguin.svg"/>
+        {/* HACK: createdAtどうする */}
+        <AddFriendCompleted user={userData}/>
     </div>
 
     );

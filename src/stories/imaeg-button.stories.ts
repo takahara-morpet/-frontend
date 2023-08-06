@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ImageButton from '../app/molecules/image-button';
+import ImageButton from '../components/molecules/image-button';
 
 export default {
     title: 'Image Button',
