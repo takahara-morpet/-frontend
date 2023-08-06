@@ -10,7 +10,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-import Routes from '../../constants/routes';
+import PageRoutes from '../../constants/page-routes';
 
 import QRModal from '../../components/molecules/qr-modal';
 
@@ -22,9 +22,9 @@ const Footer: React.FC = (): JSX.Element => {
 
     const router = useRouter();
 
-    const clickHome = () => router.push(Routes.HOME_URL);
-    const clickUsers = () => router.push(Routes.PRO_USERS_URL);
-    const clickProfile = () => router.push(Routes.PRO_PROFILE_URL);
+    const clickHome = () => router.push(PageRoutes.EVENTS_URL);
+    const clickUsers = () => router.push(PageRoutes.USERS_URL);
+    const clickProfile = () => router.push(PageRoutes.ACCOUNTS_URL);
 
     const styles = {
         footer: {

@@ -1,7 +1,7 @@
 enum Routes {
     DEV_SERVER_URL = 'http://localhost:4000',
     PRO_SERVER_URL='https://graph.shion.pro/api/v0',
-    HOME_URL = '/',
+    HOME_URL = `${DEV_SERVER_URL}/events`,
     DEV_USERS_URL = `${DEV_SERVER_URL}/users`,
     USERS_DETAIL_URL = `${DEV_SERVER_URL}/user-detail`, // json-serverで分けるためのURL
     EVENTS_URL = `${DEV_SERVER_URL}/events`,
@@ -10,5 +10,6 @@ enum Routes {
     PRO_USERS_URL = `${PRO_SERVER_URL}/friends`,
     PRO_PROFILE_URL = `${PRO_SERVER_URL}/user/@me`,
 }
+
 
 export default Routes;
