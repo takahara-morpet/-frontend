@@ -2,7 +2,7 @@ import React from "react";
 import ListEventItem from "../atoms/event-list-item"; 
 import List from "@mui/material/List";
 import { Event } from "../../types/response/event";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 type EventsListProps = {

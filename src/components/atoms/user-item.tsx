@@ -11,6 +11,7 @@ type User = {
 interface UserListItemProps{
     user: User; // TODO: ユーザーオブジェトをしっかり定義
     size?: number;
+    onClick: () => void;
 }
 
 export const UserListItem: React.FC<UserListItemProps> = ({
@@ -20,6 +21,7 @@ export const UserListItem: React.FC<UserListItemProps> = ({
         imageUri='/sample/user.png', // default image
     },
     size=100, // sizeを追加
+    onClick,
 }): JSX.Element => {
 
     const styles = {
@@ -37,7 +39,7 @@ export const UserListItem: React.FC<UserListItemProps> = ({
     }
 
     return (
-        <MuiListItem style={styles.listItem}>
+        <MuiListItem style={styles.listItem} onClick={onClick}>
             <Avatar
                 src={imageUri}
                 alt='ユーザー画像'
