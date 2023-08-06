@@ -72,7 +72,7 @@ const EventDetailTemplate: React.FC<EventDetailTemplateProps> = ({
                     margin: '10px auto',
                 }}>
                     {/*  */}
-                    {event.participants.slice(0, maxParticipants).map(( participant, index) => (
+                    {event.participants?.slice(0, maxParticipants).map(( participant, index) => (
                         <Box sx={styles.participantsContainer}>
                             <Avatar
                             key={index}

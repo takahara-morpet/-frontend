@@ -1,7 +1,9 @@
+'use client'
 import React from "react";
 
 import EventDetailTemplate from "@/components/templates/event-detail";
 import Header from "@/components/organisms/header";
+import Footer from "@/components/organisms/footer";
 import Load from "@/components/templates/load";
 import { EventDetail } from "@/types/response/event";
 import { fetchEventDetail } from "@/lib/fetch/event";
@@ -36,6 +38,7 @@ const EventDetailPage: React.FC = ():JSX.Element => {
         <div>
         <Header title="飲み会７月" />
         <EventDetailTemplate event={event} />
+        <Footer />
         </div>
     );
 }

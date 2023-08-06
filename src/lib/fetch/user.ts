@@ -9,7 +9,7 @@ import { UserDetail } from "@/types/response/user";
 
 export const fetchUsers = async (): Promise<User[]> => {
   try {
-    const response = await axios.get(Routes.USERS_URL);
+    const response = await axios.get(Routes.PRO_USERS_URL);
     return response.data;
   } catch (error) {
     throw error;
@@ -26,3 +26,13 @@ export const fetchUserDetail = async (id: string): Promise<UserDetail> => {
     throw error;
   }
 };
+
+export const fetchMyAccount = async (): Promise<UserDetail> => {
+  try {
+    const response = await axios.get(Routes.PRO_PROFILE_URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
