@@ -12,6 +12,8 @@ import { User } from "@/types/response/user";
 import { useRouter } from 'next/navigation';
 
 const UsersPage: React.FC = (): JSX.Element => {
+
+  console.log("users/page.tsx");
   
   const [usersData, setUsersData] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
@@ -20,8 +22,10 @@ const UsersPage: React.FC = (): JSX.Element => {
  
 
   useEffect(() => {
+    console.log("useEffect");
     const fetchData = async () => {
       try {
+        console.log("users");
         const users = await fetchUsers();
         setUsersData(users);
         setLoading(false);

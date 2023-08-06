@@ -289,7 +289,7 @@
             ]
         }
     ],
-    "users": [
+    "friends": [
         {
             "username": "johndoe",
             "last": "Doe",
@@ -413,5 +413,70 @@
         "twitter_url": "https://example.com/twitter5",
         "github_url": "https://example.com/github5"
     }
-]
-  }
+],
+"@me": [{
+    "username": "shion1305",
+    "last": "市川",
+    "last_kana": "Ichikawa",
+    "first": "詩恩",
+    "first_kana": "Shion",
+    "icon_url": "https://robohash.org/hicveldicta.png?size=200x200&set=set1",
+    "status_text": "Hello, I'm Shion!",
+    "background_url": "https://api.slingacademy.com/public/sample-photos/7.jpeg",
+    "intro_text": "Nice to meet you!! I'm Shion!!!",
+    "private_memo": "Hey, this is private memo!",
+    "use_line": true,
+    "use_discord": false,
+    "use_twitter": false,
+    "use_github": false
+    },
+    {
+        "username": "test user2",
+        "last": "test2",
+        "last_kana": "テスト2",
+        "first": "user2",
+        "first_kana": "ユーザー2",
+        "icon_url": "https://example.com/icon2.png",
+        "status_text": "test status2",
+        "background_url": "https://example.com/background2.png",
+        "intro_text": "test intro2",
+        "private_memo": "test memo2",
+        "line_url": "https://example.com/line2",
+        "discord_url": "https://example.com/discord2",
+        "twitter_url": "https://example.com/twitter2",
+        "github_url": "https://example.com/github2"
+    },
+    {
+        "username":"test user3",
+        "last": "test3",
+        "last_kana": "テスト3",
+        "first": "user3",
+        "first_kana": "ユーザー3",
+        "icon_url": "https://example.com/icon3.png",
+        "status_text": "test status3",
+        "background_url": "https://example.com/background3.png",
+        "intro_text": "test intro3",
+        "private_memo": "test memo3",
+        "line_url": "https://example.com/line3",
+        "discord_url": "https://example.com/discord3",
+        "twitter_url": "https://example.com/twitter3",
+        "github_url": "https://example.com/github3"
+    },
+    {
+        "username": "test user4",
+        "last": "test4",
+        "last_kana": "テスト4",
+        "first": "user4",
+        "first_kana": "ユーザー4",
+        "icon_url": "https://example.com/icon4.png",
+        "status_text": "test status4",
+        "background_url": "https://example.com/background4.png",
+        "intro_text": "test intro4",
+        "private_memo": "test memo4",
+        "line_url": "https://example.com/line4",
+        "discord_url": "https://example.com/discord4",
+        "twitter_url": "https://example.com/twitter4",
+        "github_url": "https://example.com/github4"
+    }
+]    
+}
